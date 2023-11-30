@@ -32,7 +32,30 @@
 </div>
 
 
+<body class="dark">
+    <!-- Ваш существующий код остаётся без изменений -->
 
+    <!-- Добавляем кнопку разворачивания на весь экран -->
+    <button id="fullscreenButton" onclick="toggleFullScreen()">Развернуть на весь экран</button>
+
+    <script>
+        // Ваш существующий JavaScript код остаётся без изменений
+
+        // Добавляем функцию для разворачивания на весь экран
+        function toggleFullScreen() {
+            const unityContainer = document.getElementById('unity-container');
+
+            if (!document.fullscreenElement) {
+                unityContainer.requestFullscreen()
+                    .catch(err => {
+                        console.error(`Error attempting to enable full-screen mode: ${err.message}`);
+                    });
+            } else {
+                document.exitFullscreen();
+            }
+        }
+    </script>
+</body>
 
 
 <script>
