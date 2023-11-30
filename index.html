@@ -44,6 +44,18 @@
             // Предполагая, что "unityInstance" - это ваша Unity-игра, загруженная на страницу
             unityInstance.SendMessage("UnityScript", "ToggleFullScreen");
         }
+        function toggleFullScreen() {
+            var iframe = document.getElementById('gameFrame');
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.mozRequestFullScreen) { /* Firefox */
+                iframe.mozRequestFullScreen();
+            } else if (iframe.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) { /* IE/Edge */
+                iframe.msRequestFullscreen();
+            }
+        }
         // Добавляем функцию для разворачивания на весь экран
         function toggleFullScreen() {
             const unityContainer = document.getElementById('unity-container');
