@@ -40,7 +40,10 @@
 
     <script>
         // Ваш существующий JavaScript код остаётся без изменений
-
+        function callUnityMethod() {
+            // Предполагая, что "unityInstance" - это ваша Unity-игра, загруженная на страницу
+            unityInstance.SendMessage("UnityScript", "ToggleFullScreen");
+        }
         // Добавляем функцию для разворачивания на весь экран
         function toggleFullScreen() {
             const unityContainer = document.getElementById('unity-container');
